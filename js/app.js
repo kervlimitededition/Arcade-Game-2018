@@ -1,5 +1,5 @@
 // Enemies our player must avoid
-var Enemy = function() {
+var Enemy = function(xPosition, yPosition) {
     // Variables applied to each of our instances go here,
     this.xPosition = xPosition;
     this.yPosition = yPosition;
@@ -20,16 +20,29 @@ Enemy.prototype.update = function(dt) {
 
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    ctx.drawImage(Resources.get(this.sprite), this.xPosition, this.yPosition);
 };
 
 // Now write your own player class
 class Player {
-    constructor (x, y) {
-        this.x = x;
-        this.y = y;
+    constructor (xPosition, yPosition) {
+        this.xPosition = xPosition * 2;
+        this.yPosition = yPosition * 5;
+        this.playerMove = false;
+        this.playerWon = false;
         this.sprite = 'images/char-boy.png';
     }
+
+    handleInput(input) {
+        switch(input){
+            case 'left':
+                this.xPosition = this.xPosition > 0 ? this.xPosition > - 1 : this.xPosition;
+            case 'up' : 
+                this.yPosition = this.yPosition > 0 ? this.yPosition > - 4 : this.yPosition;
+
+        }
+    }
+    
 }
 // This class requires an update(), render() and
 Player.prototype.update = function(dt) {
@@ -37,15 +50,15 @@ Player.prototype.update = function(dt) {
 }
 // a handleInput() method.
 Player.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    ctx.drawImage(Resources.get(this.sprite), this.xPosition, this.yPosition);
 };
-
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
-var allEnemies
+var allEnemies = [];
+
 // Place the player object in a variable called player
-var player = new Player();
+var player = new Player(101, 81);
 
 
 
