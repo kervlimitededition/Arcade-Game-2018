@@ -38,22 +38,20 @@ class Player {
             case 'left'://works
                 if(this.xPosition > 0 ){
                     this.xPosition -= 101;
-                } else if (this.xPosition === 0) {
-                    this.xPosition === 2 && this.yPosition === 5;
-                }
+                } 
                 break;
             case 'up' : //works
-                if(this.yPosition >= 5) {
+                if(this.yPosition > 5) {
                     this.yPosition -= 83;
                 }
                 break;
             case 'down' :
-                if(this.yPosition < 5) {
+                if(this.yPosition > -1 || this.yPosition === 0) {
                     this.yPosition += 83;
                 }
                 break;
             case 'right' :
-                if(this.xPosition <= 4) {
+                if(this.xPosition > 0 || this.xPosition === 0) {
                     this.xPosition += 101;
                 }
                 break;
