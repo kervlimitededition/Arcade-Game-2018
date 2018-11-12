@@ -35,10 +35,28 @@ class Player {
 
     handleInput(input) {
         switch(input){
-            case 'left':
-                this.xPosition = this.xPosition > 0 ? this.xPosition > - 1 : this.xPosition;
-            case 'up' : 
-                this.yPosition = this.yPosition > 0 ? this.yPosition > - 4 : this.yPosition;
+            case 'left'://works
+                if(this.xPosition > 0 ){
+                    this.xPosition -= 101;
+                } else if (this.xPosition === 0) {
+                    this.xPosition === 2 && this.yPosition === 5;
+                }
+                break;
+            case 'up' : //works
+                if(this.yPosition >= 5) {
+                    this.yPosition -= 83;
+                }
+                break;
+            case 'down' :
+                if(this.yPosition < 5) {
+                    this.yPosition += 83;
+                }
+                break;
+            case 'right' :
+                if(this.xPosition <= 4) {
+                    this.xPosition += 101;
+                }
+                break;
 
         }
     }
