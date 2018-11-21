@@ -1,3 +1,11 @@
+//
+const playAgain = document.querySelector('.playAgain');
+// const messageStatus = document.querySelector('.displayMessage');
+const ExitGame = document.querySelector('.exitGame');
+const modal = document.querySelector('.modal');
+// let GWindow = global.window,
+//     id; 
+
 // Enemies our player must avoid
 class Enemy {
     constructor (xPosition, yPosition, speed) {
@@ -9,6 +17,10 @@ class Enemy {
         // a helper we've provided to easily load images
         this.sprite = 'images/enemy-bug.png';
         this.speed = speed;
+        // **Store the original x position (used to reset an enemy's position)
+        this.originalXPosition = xPosition;
+        // **Enemies cannot move until the game starts
+        this.canMove = true;
     };
 }
 
@@ -19,6 +31,20 @@ Enemy.prototype.update = function(dt) {
     // which will ensure the game runs at the same speed for
     // all computers.
     this.xPosition += this.speed * dt;
+    // Reset enemy position once it leaves the visible canvas
+    if (this.xPosition > 505) {
+        this.resetPosition();
+    }
+      
+      //check for crashes :)
+      if (!player.crashes) {
+          if(this.xPosition + 70 > player.xPosition &&        this.xPosition - 70 < player.xPosition &&
+              this.yPosition + 70 > player.yPosition && this.yPosition - 70 < player.yPosition){
+                  player.crashes = true;
+                  console.log('crashhhhh')
+                //   resetGame();
+              }
+        }
 };
 
 // Draw the enemy on the screen, required method for game
@@ -26,6 +52,10 @@ Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.xPosition, this.yPosition);
     };
 
+//let's reset the enemies position
+Enemy.prototype.resetPosition = function() {
+    this.xPosition = this.originalXPosition;
+}
 
 // Now write your own player class
 class Player {
@@ -36,7 +66,8 @@ class Player {
         this.playerWon = false;
         this.sprite = 'images/char-boy.png';
     }
-    
+
+    // a handleInput() method.
     handleInput(input) {
         switch(input) {
             case 'left':
@@ -58,17 +89,29 @@ class Player {
                 if(this.yPosition < 606 && this.yPosition <=380) {
                     this.yPosition += 83;
                 }
+            break;
         }
     }
+
+    // This class requires an update(), render() and
+    update(dt) {
+        // console.log(this.yPosition);
+        // console.log(typeof this.yPosition);
+        // playerWin();
+        if(this.playerWon === true) {
+            playerWon = true;
+            
+        }
+    }
+
+    render() {
+        ctx.drawImage(Resources.get(this.sprite), this.xPosition, this.yPosition);
+    };
+
 }
-// This class requires an update(), render() and
-Player.prototype.update = function(dt) {
-    
-}
-// a handleInput() method.
-Player.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.xPosition, this.yPosition);
-};
+
+
+
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
