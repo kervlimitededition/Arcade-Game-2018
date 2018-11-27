@@ -5,7 +5,11 @@ frontend-nanodegree-arcade-game
 Arcade is variation of one the classic Games developed by Konami Holdings Corporation: Frogger Arcade. I have to create a clone of the Frogger Arcade game as part of the Front-End Developer Nanodegree curriculum for Udacity. 
 
 ### How to play the game
-Use the left, right, up and down keys on your keyboard to play the game. 
+Use 
+* left, 
+* right, 
+* up and 
+* down keys on your keyboard to play the game. 
 
 ### What did I gain from working on this project?
 * I get a better understanding of Object-Oriented Progamming.
