@@ -8,13 +8,13 @@ Arcade is variation of one the classic Games developed by Konami Holdings Corpor
 Use the left, right, up and down keys on your keyboard to play the game. 
 
 ### What did I gain from working on this project?
-*I get a better understanding of Object-Oriented Progamming.
-*The 'this' keyword
-*Working with HTML5 Canvas
+* I get a better understanding of Object-Oriented Progamming.
+* The 'this' keyword
+* Working with HTML5 Canvas
 
 ### Resources
-*https://developer.mozilla.org/en-US/docs/Web/API/Location/reload
-https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+* https://developer.mozilla.org/en-US/docs/Web/API/Location/reload
+* https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 
 
 
