@@ -1,10 +1,8 @@
+"use strict";
 //
 let playAgain = document.querySelector('.playAgain');
-// const messageStatus = document.querySelector('.displayMessage');
 const ExitGame = document.querySelector('.exitGame');
 const modal = document.querySelector('.modal');
-// let GWindow = global.window,
-//     id; 
 
 // Enemies our player must avoid
 class Enemy {
@@ -95,18 +93,16 @@ class Player {
     }
 
     // This class requires an update(), render()
-    update(dt) {
-        // this.playerWin();     
-        if(this.yPosition <= 69){
+    update(dt) {     
+        if(this.yPosition <= 69){// condition to check when player win
             showMessage();
             this.playerWon = true;
-            // modal.classList.toggle('show')
         }  
     };
 
-    playerWin() { // condition to check when player win
+    // playerWin() { 
         
-    };
+    // };
 
     render() {
         ctx.drawImage(Resources.get(this.sprite), this.xPosition, this.yPosition);
