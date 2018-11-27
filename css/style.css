@@ -1,3 +1,31 @@
 body {
     text-align: center;
 }
+
+.score-panel {
+    text-align: left;
+    width: 345px;
+    margin-bottom: 10px;
+}
+
+.modal {
+    position: absolute;
+    width: 505px;
+    height: 606px;
+    background-color: #ddd;
+    top: 58px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    color: #000;
+}
+
+.show {
+    visibility: hidden;
+}
+
+
+.displayHeader {
+    color: rgb(255, 255, 255);
+    font-size: 2em;
+}
