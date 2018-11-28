@@ -8,16 +8,48 @@ body {
     margin-bottom: 10px;
 }
 
-.modal {
+.start {
     position: absolute;
+    border-radius: 5px;
     width: 505px;
-    height: 606px;
+    height: 608px;
     background-color: rgb(13, 230, 85);
-    top: 58px;
+    font-size: 3.5em;
+    top: 56px;
     left: 0;
     right: 0;
     margin: 0 auto;
     color: #000;
+}
+
+.btn {
+    background-color: rgb(245, 247, 122);
+    border: none;
+    padding: 4px 0;
+    width: 180px;
+}
+
+.btnStart {
+    margin-top: 300px;
+}
+
+.modal {
+    position: absolute;
+    width: 505px;
+    height: 608px;
+    background-color: rgb(13, 230, 85);
+    top: 56px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    color: #000;
+    border-radius: 5px;
+}
+
+
+
+.hide {
+    visibility: hidden;
 }
 
 .show {
@@ -26,6 +58,8 @@ body {
 
 
 .displayHeader {
-    color: rgb(255, 255, 255);
+    color: #000;
     font-size: 2em;
+    margin-top: 260px;
+    padding-bottom: 40px;
 }
