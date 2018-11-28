@@ -1,6 +1,8 @@
 "use strict";
 //
-let playAgain = document.querySelector('.playAgain');
+let playAgain = document.querySelector('.playAgain'),
+    btnStart = document.querySelector('.btnStart'),
+    start = document.querySelector('.start');
 const ExitGame = document.querySelector('.exitGame');
 const modal = document.querySelector('.modal');
 
@@ -123,6 +125,11 @@ class Player {
         player.resetPosition(); 
     });
 
+//start Game
+    btnStart.addEventListener('click', function(){
+        start.classList.add('hide');
+    })
+
 //give user an option to exit the game
     ExitGame.addEventListener('click', function() {
         close();
@@ -136,9 +143,9 @@ var allEnemies = [];
 var player = new Player(101, 81);
 
 //initiate enemies
-let littleBugs1 = new Enemy(10, 60, 100);
-let littleBugs2 = new Enemy(20, 143, 90);
-let littleBugs3 = new Enemy(30, 227, 90);
+let littleBugs1 = new Enemy(10, 60, 250);
+let littleBugs2 = new Enemy(20, 143, 360);
+let littleBugs3 = new Enemy(30, 227, 445);
 allEnemies = [littleBugs1, littleBugs2, littleBugs3];
 
 //reset functions
