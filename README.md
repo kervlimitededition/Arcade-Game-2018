@@ -5,13 +5,12 @@ frontend-nanodegree-arcade-game
 Arcade is variation of one the classic Games developed by Konami Holdings Corporation: Frogger Arcade. I have to create a clone of the Frogger Arcade game as part of the Front-End Developer Nanodegree curriculum for Udacity. 
 
 ### Instructions
-1. Click on the Start button to start the game.
-2. Click on the Play again button to play the again.
-3. To play the game locally, 
+1. To play the game locally, 
     * click on the Clone or Download button
     * Save the download files in folder. Ex: Desktop
     * Extract the zip file
-    * click on index.html to open the game and start playing.
+2. Click on the Start button to start the game.
+3. Click on the Play again button to play the again.
 
 ### How to play the game
 Use 
